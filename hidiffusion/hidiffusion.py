@@ -554,7 +554,7 @@ def make_diffusers_sdxl_contrtolnet_ppl(block_class):
                         images.append(image_)
 
                     control_image = images
-                    height, width = image[0].shape[-2:]
+                    height, width = images[0].shape[-2:]
                 else:
                     assert False
             # 5. Prepare timesteps
