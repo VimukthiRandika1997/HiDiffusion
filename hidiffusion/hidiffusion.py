@@ -556,7 +556,7 @@ def make_diffusers_sdxl_contrtolnet_ppl(block_class):
                     control_image = images
                     height, width = images[0].shape[-2:]
                 else:
-                    assert False
+                    raise ValueError(f"Unsupported controlnet type: {type(controlnet).__name__}")
             # 5. Prepare timesteps
             self.scheduler.set_timesteps(num_inference_steps, device=device)
             if image is not None:
